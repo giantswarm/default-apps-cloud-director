@@ -7,7 +7,7 @@ Here we define the default-apps-vcd chart with its templates and default configu
 
 **What is this app?**
 
-`default-apps-vsphere` pre-installs all default apps in a VCD (vSphere Cloud Director) Workload Cluster.
+`default-apps-vcd` pre-installs all default apps in a VCD (VMware Cloud Director) Workload Cluster.
 
 **Who can use it?**
 
