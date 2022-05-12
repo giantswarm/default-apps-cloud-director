@@ -1,0 +1,81 @@
+{{- range $key, $value := .Values.apps }}
+{{- $appName := .appName }}
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  annotations:
+    chart-operator.giantswarm.io/force-helm-upgrade: "{{ .forceUpgrade }}"
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterName }}-{{ $appName }}
+  namespace: {{ $.Release.Namespace }}
+spec:
+  catalog: {{ .catalog }}
+  kubeConfig:
+    context:
+      name: {{ $.Values.clusterName }}-admin@{{ $.Values.clusterName }}
+    inCluster: false
+    secret:
+      name: {{ $.Values.clusterName }}-kubeconfig
+      namespace: {{ $.Release.Namespace}}
+  {{- with .clusterValues }}
+  {{- if or .configMap .secret }}
+  config:
+  {{- if .configMap }}
+    configMap:
+      name: {{ $.Values.clusterName }}-cluster-values
+      namespace: {{ $.Release.Namespace }}
+  {{- end }}
+  {{- if .secret }}
+    secret:
+      name: {{ $.Values.clusterName }}-cluster-values
+      namespace: {{ $.Release.Namespace }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- with (get $.Values.userConfig $key) }}
+  {{- if or .configMap .secret }}
+  userConfig:
+  {{- if .configMap }}
+    configMap:
+      name: {{ $.Values.clusterName }}-{{ $appName }}-user-values
+      namespace: {{ $.Release.Namespace }}
+  {{- end }}
+  {{- if .secret }}
+    secret:
+      name: {{ $.Values.clusterName }}-{{ $appName }}-user-values
+      namespace: {{ $.Release.Namespace }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  name: {{ .chartName }}
+  namespace: {{ .namespace }}
+  version: {{ .version }}
+{{- with (get $.Values.userConfig $key) }}
+{{- if .configMap }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterName }}-{{ $appName }}-user-values
+  namespace: {{ $.Release.Namespace }}
+data:
+  {{- (tpl (.configMap | toYaml | toString) $) | nindent 2 }}
+{{- end }}
+{{- if .secret }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterName }}-{{ $appName }}-user-values
+  namespace: {{ $.Release.Namespace }}
+stringData:
+  {{- (tpl (.secret | toYaml | toString) $) | nindent 2 }}
+{{- end }}
+{{- end }}
+{{- end -}}

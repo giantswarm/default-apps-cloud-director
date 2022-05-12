@@ -1,14 +1,87 @@
-# TEMPLATE-APP: This is set as a reasonable default, feel free to change.
+clusterName: ""
+organization: ""
+managementCluster: ""
 
-name: {APP-NAME}
-serviceType: managed
+userConfig:
+  netExporter:
+    configMap:
+      values: |
+        dns:
+          service: kube-dns
+  nodeExporter:
+    configMap:
+      values: |
+        disableConntrackCollector: true
+        disableNvmeCollector: true
 
-project:
-  branch: "[[ .Branch ]]"
-  commit: "[[ .SHA ]]"
-
-image:
-  registry: quay.io
-  name: giantswarm/{APP-NAME}
-  tag: v0.0.1
-  pullPolicy: IfNotPresent
+apps:
+  certExporter:
+    appName: cert-exporter
+    chartName: cert-exporter
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 2.1.0
+  cilium:
+    appName: cilium
+    chartName: cilium
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    version: 0.1.0
+  clusterResources:
+    appName: cluster-resources
+    chartName: cluster-resources
+    catalog: default
+    clusterValues:
+      configMap: false
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    version: 0.1.0
+  kubeStateMetrics:
+    appName: kube-state-metrics
+    chartName: kube-state-metrics-app
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 1.7.0
+  metricsServer:
+    appName: metrics-server
+    chartName: metrics-server-app
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 1.6.0
+  netExporter:
+    appName: net-exporter
+    chartName: net-exporter
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 1.10.3
+  nodeExporter:
+    appName: node-exporter
+    chartName: node-exporter-app
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 1.11.0
