@@ -1,4 +1,4 @@
 replace-chart-version-with-git: true
 generate-metadata: true
-chart-dir: ./helm/default-apps-vcd
+chart-dir: ./helm/default-apps-cloud-director
 destination: ./build

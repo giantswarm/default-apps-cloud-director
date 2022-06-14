@@ -14,7 +14,7 @@ This PR:
 
 ### Testing
 
-Description on how default-apps-vcd can be tested.
+Description on how default-apps-cloud-director can be tested.
 
 - [ ] fresh install works
 - [ ] upgrade from previous version works
