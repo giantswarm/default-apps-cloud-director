@@ -11,7 +11,7 @@ workflows:
           name: "push-to-app-catalog"
           app_catalog: "cluster-catalog"
           app_catalog_test: "cluster-test-catalog"
-          chart: "default-apps-vcd"
+          chart: "default-apps-cloud-director"
           # Trigger job on git tag.
           filters:
             tags:

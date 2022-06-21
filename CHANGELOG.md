@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Renamed the repo from `default-apps-vcd`.
+
 ### Added
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-vcd/tree/main
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/tree/main
