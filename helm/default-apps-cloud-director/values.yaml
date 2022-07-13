@@ -24,7 +24,7 @@ apps:
       secret: false
     forceUpgrade: true
     namespace: kube-system
-    version: 2.1.0  
+    version: 2.1.0
   certManager:
     appName: cert-manager
     chartName: cert-manager-app
