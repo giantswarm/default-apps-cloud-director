@@ -35,6 +35,16 @@ apps:
     forceUpgrade: false
     namespace: kube-system
     version: 0.1.0
+  cloudProviderCloudDirector:
+    appName: cloud-provider-cloud-director
+    chartName: cloud-provider-cloud-director
+    catalog: default
+    clusterValues:
+      configMap: false
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    version: 0.1.0
   clusterResources:
     appName: cluster-resources
     chartName: cluster-resources
