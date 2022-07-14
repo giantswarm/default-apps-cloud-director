@@ -25,6 +25,16 @@ apps:
     forceUpgrade: true
     namespace: kube-system
     version: 2.1.0
+  certManager:
+    appName: cert-manager
+    chartName: cert-manager-app
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    version: 2.13.0
   cilium:
     appName: cilium
     chartName: cilium
