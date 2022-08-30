@@ -51,6 +51,18 @@ apps:
     # used by renovate
     # repo: giantswarm/cilium-app
     version: 0.1.0
+  cloudProviderCloudDirector:
+    appName: cloud-provider-cloud-director
+    chartName: cloud-provider-cloud-director
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: true
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/cloud-provider-cloud-director-app
+    version: 0.1.1
   clusterResources:
     appName: cluster-resources
     chartName: cluster-resources
