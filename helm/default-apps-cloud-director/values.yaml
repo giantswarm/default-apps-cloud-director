@@ -77,7 +77,7 @@ apps:
     version: 0.1.0
   kubeStateMetrics:
     appName: kube-state-metrics
-    chartName: kube-state-metrics-app
+    chartName: kube-state-metrics
     catalog: default
     clusterValues:
       configMap: true
