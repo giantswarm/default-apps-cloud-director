@@ -122,4 +122,4 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.11.0
+    version: 1.13.0
