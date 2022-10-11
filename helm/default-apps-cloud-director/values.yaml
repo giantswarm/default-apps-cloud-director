@@ -50,7 +50,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cilium-app
-    version: 0.1.0
+    version: 0.3.1
   cloudProviderCloudDirector:
     appName: cloud-provider-cloud-director
     chartName: cloud-provider-cloud-director
