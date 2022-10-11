@@ -74,7 +74,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cluster-resources-app
-    version: 0.1.0
+    version: 0.1.1
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
