@@ -62,7 +62,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cloud-provider-cloud-director-app
-    version: 0.1.1
+    version: 0.1.2
   clusterResources:
     appName: cluster-resources
     chartName: cluster-resources
