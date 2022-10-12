@@ -35,7 +35,7 @@ apps:
       configMap: true
       secret: false
     forceUpgrade: true
-    namespace: kube-system
+    namespace: giantswarm
     # used by renovate
     # repo: giantswarm/cert-manager-app
     version: 2.17.0
