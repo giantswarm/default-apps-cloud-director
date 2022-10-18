@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Set `ipam` mode from `cluster-pool` to `kubernetes` for cilium cni.
+
 ## [0.2.0] - 2022-10-17
 
 ### Added
