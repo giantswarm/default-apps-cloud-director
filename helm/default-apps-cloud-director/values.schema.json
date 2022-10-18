@@ -66,34 +66,48 @@
             "type": "string"
         },
         "userConfig": {
-            "additionalProperties": {
-                "type": "object",
-                "properties": {
-                    "configMap": {
-                        "type": "object",
-                        "properties": {
-                            "values": {
-                                "type": "string"
+            "type": "object",
+            "properties": {
+                "cilium": {
+                    "type": "object",
+                    "properties": {
+                        "configMap": {
+                            "type": "object",
+                            "properties": {
+                                "values": {
+                                    "type": "string"
+                                }
                             }
-                        },
-                        "required": [
-                            "values"
-                        ]
-                    },
-                    "secret": {
-                        "type": "object",
-                        "properties": {
-                            "values": {
-                                "type": "string"
+                        }
+                    }
+                },
+                "netExporter": {
+                    "type": "object",
+                    "properties": {
+                        "configMap": {
+                            "type": "object",
+                            "properties": {
+                                "values": {
+                                    "type": "string"
+                                }
                             }
-                        },
-                        "required": [
-                            "values"
-                        ]
+                        }
+                    }
+                },
+                "nodeExporter": {
+                    "type": "object",
+                    "properties": {
+                        "configMap": {
+                            "type": "object",
+                            "properties": {
+                                "values": {
+                                    "type": "string"
+                                }
+                            }
+                        }
                     }
                 }
-            },
-            "type": "object"
+            }
         }
     },
     "required": [
@@ -102,5 +116,3 @@
         "managementCluster"
     ]
 }
-
-
