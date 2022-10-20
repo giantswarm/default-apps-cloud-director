@@ -3,6 +3,12 @@ organization: ""
 managementCluster: ""
 
 userConfig:
+  cilium:
+    configMap:
+      values: |
+        ipam:
+          mode: kubernetes
+
   netExporter:
     configMap:
       values: |
