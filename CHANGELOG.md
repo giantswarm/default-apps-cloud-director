@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Use `clusterValues` `secret` for `cert-manager` (requried to create a fresh cluster behind a proxy.
 - Set `ipam` mode from `cluster-pool` to `kubernetes` for cilium cni.
 
 ## [0.2.0] - 2022-10-17
