@@ -39,12 +39,12 @@ apps:
     catalog: default
     clusterValues:
       configMap: true
-      secret: false
+      secret: true
     forceUpgrade: true
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.17.1
+    version: 2.18.0
   cilium:
     appName: cilium
     chartName: cilium
