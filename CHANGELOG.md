@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `observability-bundle` as default app
 - Supports installing apps `inCluster`
 
+## [0.2.2] - 2022-12-01
+
 ### Changed
 
 - Bump `cloud-provider-cloud-director-app` version to `0.1.3`.
@@ -40,7 +42,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/giantswarm/default-apps-cloud-director/releases/tag/v0.1.0
