@@ -8,10 +8,20 @@ metadata:
     chart-operator.giantswarm.io/force-helm-upgrade: "{{ .forceUpgrade }}"
   labels:
     {{- include "labels.common" $ | nindent 4 }}
+    {{- if .inCluster }}
+    app-operator.giantswarm.io/version: 0.0.0
+    {{- end }}
   name: {{ $.Values.clusterName }}-{{ $appName }}
   namespace: {{ $.Release.Namespace }}
 spec:
   catalog: {{ .catalog }}
+  name: {{ .chartName }}
+  {{- if .inCluster }}
+  namespace: {{ $.Release.Namespace }}
+  kubeConfig:
+    inCluster: true
+  {{- else }}
+  namespace: {{ .namespace }}
   kubeConfig:
     context:
       name: {{ $.Values.clusterName }}-admin@{{ $.Values.clusterName }}
@@ -19,6 +29,8 @@ spec:
     secret:
       name: {{ $.Values.clusterName }}-kubeconfig
       namespace: {{ $.Release.Namespace}}
+  {{- end }}
+  version: {{ .version }}
   {{- with .clusterValues }}
   {{- if or .configMap .secret }}
   config:
@@ -33,9 +45,8 @@ spec:
       namespace: {{ $.Release.Namespace }}
   {{- end }}
   {{- end }}
-  {{- end }}
-  {{- with (get $.Values.userConfig $key) }}
-  {{- if or .configMap .secret }}
+{{- end }}
+{{- with (get $.Values.userConfig $key) }}
   userConfig:
   {{- if .configMap }}
     configMap:
@@ -48,10 +59,7 @@ spec:
       namespace: {{ $.Release.Namespace }}
   {{- end }}
   {{- end }}
-  {{- end }}
-  name: {{ .chartName }}
-  namespace: {{ .namespace }}
-  version: {{ .version }}
+
 {{- with (get $.Values.userConfig $key) }}
 {{- if .configMap }}
 ---
@@ -78,4 +86,5 @@ stringData:
   {{- (tpl (.secret | toYaml | toString) $) | nindent 2 }}
 {{- end }}
 {{- end }}
-{{- end -}}
+
+{{- end }}

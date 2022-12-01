@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `observability-bundle` as default app
+- Supports installing apps `inCluster`
+
 ### Changed
 
 - Bump `cloud-provider-cloud-director-app` version to `0.1.3`.
