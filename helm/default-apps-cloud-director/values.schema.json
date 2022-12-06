@@ -107,7 +107,7 @@
                         }
                     }
                 },
-                "observability-bundle": {
+                "observabilityBundle": {
                     "type": "object",
                     "properties": {
                         "appName": {
