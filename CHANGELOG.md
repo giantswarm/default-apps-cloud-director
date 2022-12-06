@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `observability-bundle` as default app
+- Supports installing apps `inCluster`
+
 ## [0.2.2] - 2022-12-01
 
 ### Changed

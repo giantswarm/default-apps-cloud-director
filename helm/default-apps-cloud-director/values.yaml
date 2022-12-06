@@ -129,3 +129,16 @@ apps:
     # used by renovate
     # repo: giantswarm/node-exporter-app
     version: 1.13.0
+  observabilityBundle:
+    appName: observability-bundle
+    chartName: observability-bundle
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    inCluster: true
+    namespace: "kube-system"
+    # used by renovate
+    # repo: giantswarm/observability-bundle
+    version: 0.1.3
