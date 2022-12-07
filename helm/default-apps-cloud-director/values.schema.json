@@ -133,6 +133,9 @@
                         "inCluster": {
                             "type": "boolean"
                         },
+                        "forceUpgrade": {
+                            "type": "boolean"
+                        },
                         "namespace": {
                             "type": "string"
                         },
