@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.4] - 2023-01-11
+
 ### Changed
 
 - Update `node-exporter` to `1.15.0`
@@ -66,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.3...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.4...HEAD
+[0.3.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.0...v0.3.1
