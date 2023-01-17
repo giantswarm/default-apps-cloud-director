@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update `observability-bundle` from `0.1.8` to `0.1.9`
+
 ## [0.3.4] - 2023-01-11
 
 ### Changed
