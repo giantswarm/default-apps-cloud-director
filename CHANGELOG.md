@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update `observability-bundle` from `0.1.8` to `0.1.9`
+- Update `kube-state-metrics` from `1.14.1` to `1.14.2`
 
 ## [0.3.4] - 2023-01-11
 
