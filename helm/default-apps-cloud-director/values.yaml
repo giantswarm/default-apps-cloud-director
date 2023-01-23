@@ -1,6 +1,6 @@
-clusterName: ""
-organization: ""
-managementCluster: ""
+clusterName: "dummy"
+organization: "dummy"
+managementCluster: "dummy"
 
 userConfig:
   cilium:
