@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.6] - 2023-01-24
+
 ### Added
 
 - Added `vertical-pod-autoscaler@2.5.3` & `vertical-pod-autoscaler-crd@1.0.1`.
@@ -79,7 +81,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.5...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.6...HEAD
+[0.3.6]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.5...v0.3.6
 [0.3.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.2...v0.3.3
