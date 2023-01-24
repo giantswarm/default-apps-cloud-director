@@ -142,3 +142,27 @@ apps:
     # used by renovate
     # repo: giantswarm/observability-bundle
     version: 0.1.9
+  vpa:
+    appName: vertical-pod-autoscaler
+    chartName: vertical-pod-autoscaler-app
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/vertical-pod-autoscaler-app
+    version: 2.5.3
+  vpaCRD:
+    appName: vertical-pod-autoscaler-crd
+    chartName: vertical-pod-autoscaler-crd
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/vertical-pod-autoscaler-crd
+    version: 1.0.1
