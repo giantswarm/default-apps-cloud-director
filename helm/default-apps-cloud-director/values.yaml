@@ -3,12 +3,6 @@ organization: ""
 managementCluster: ""
 
 userConfig:
-  cilium:
-    configMap:
-      values: |
-        ipam:
-          mode: kubernetes
-
   netExporter:
     configMap:
       values: |
@@ -45,42 +39,6 @@ apps:
     # used by renovate
     # repo: giantswarm/cert-manager-app
     version: 2.18.0
-  cilium:
-    appName: cilium
-    chartName: cilium
-    catalog: default
-    clusterValues:
-      configMap: true
-      secret: false
-    forceUpgrade: false
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cilium-app
-    version: 0.6.1
-  cloudProviderCloudDirector:
-    appName: cloud-provider-cloud-director
-    chartName: cloud-provider-cloud-director
-    catalog: default
-    clusterValues:
-      configMap: true
-      secret: true
-    forceUpgrade: true
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cloud-provider-cloud-director-app
-    version: 0.2.0
-  clusterResources:
-    appName: cluster-resources
-    chartName: cluster-resources
-    catalog: default
-    clusterValues:
-      configMap: false
-      secret: false
-    forceUpgrade: false
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cluster-resources-app
-    version: 0.1.1
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
