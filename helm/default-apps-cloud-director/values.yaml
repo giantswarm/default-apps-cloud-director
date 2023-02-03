@@ -8,6 +8,18 @@ userConfig:
       values: |
         ipam:
           mode: kubernetes
+        hubble:
+          relay:
+            enabled: true
+        defaultPolicies:
+          enabled: true
+          tolerations:
+            - effect: NoSchedule
+              operator: Exists
+            - effect: NoExecute
+              operator: Exists
+            - key: CriticalAddonsOnly
+              operator: Exists
 
   netExporter:
     configMap:
@@ -69,18 +81,6 @@ apps:
     # used by renovate
     # repo: giantswarm/cloud-provider-cloud-director-app
     version: 0.2.0
-  clusterResources:
-    appName: cluster-resources
-    chartName: cluster-resources
-    catalog: default
-    clusterValues:
-      configMap: false
-      secret: false
-    forceUpgrade: false
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cluster-resources-app
-    version: 0.1.1
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
