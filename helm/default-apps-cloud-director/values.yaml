@@ -1,6 +1,6 @@
 clusterName: ""
 organization: ""
-managementCluster: ""
+managementCluster: "okChange"
 
 userConfig:
   cilium:
