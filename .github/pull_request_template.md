@@ -25,5 +25,5 @@ Changelog must always be updated.
 
 ### Checklist
 
-- [ ] Update changelog in CHANGELOG.md.
+- [ ] Update changelog in CHANGELOG.md, **check all commits are in it (renovate included)**.
 - [ ] Make sure `values.yaml` and `values.schema.json` are valid.
