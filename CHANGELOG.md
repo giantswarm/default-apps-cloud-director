@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Bump `cloud-provider-cloud-director-app` version to `0.2.3`.
+
+### Changed
+
 - Bump `observability-bundle` version to `0.2.0`.
 
 ## [0.3.8] - 2023-02-20
