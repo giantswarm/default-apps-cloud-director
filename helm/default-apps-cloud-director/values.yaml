@@ -80,7 +80,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cloud-provider-cloud-director-app
-    version: 0.2.1
+    version: 0.2.2
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
