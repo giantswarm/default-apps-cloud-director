@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.9] - 2023-02-23
+
+### Changed
+
+- Bump `observability-bundle` version to `0.2.0`.
+- Bump `cert-manager-app` version to `v2.20.0`. 
+- Bump `cloud-provider-cloud-director-app ` version to `0.2.3`.
+
+## [0.3.8] - 2023-02-20
+
+### Changed
+
+- Bump `cloud-provider-cloud-director-app` version to `0.2.1`.
+
+## [0.3.7] - 2023-02-14
+
+### Added
+
+- Enable `hubble` in `cilium`.
+- Enable default network policies in `cilium`.
+- Add tolerations to `cilium`.
+
+### Changed
+
+- Update `cert-manager` from `2.18.0` to `2.18.1`.
+
+### Removed
+
+- Stop deploying cluster-resources app (`cilium` will create network policies instead).
+
 ## [0.3.6] - 2023-01-24
 
 ### Added
@@ -81,7 +111,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.6...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.9...HEAD
+[0.3.9]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.8...v0.3.9
+[0.3.8]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.7...v0.3.8
+[0.3.7]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.6...v0.3.7
 [0.3.6]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.5...v0.3.6
 [0.3.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.3...v0.3.4
