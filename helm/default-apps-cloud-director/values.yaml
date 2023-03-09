@@ -123,4 +123,4 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-crd
-    version: 1.0.1
+    version: 2.0.0
