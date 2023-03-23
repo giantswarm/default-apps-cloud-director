@@ -6,6 +6,10 @@ kind: App
 metadata:
   annotations:
     chart-operator.giantswarm.io/force-helm-upgrade: "{{ .forceUpgrade }}"
+    {{- if .dependsOn }}
+    # app-operator will make sure that the app on which it depends is installed before
+    app-operator.giantswarm.io/depends-on: {{ printf "%s-%s" $.Values.clusterName .dependsOn -}}
+    {{- end }}
   labels:
     {{- include "labels.common" $ | nindent 4 }}
     {{- if .inCluster }}
