@@ -3,24 +3,6 @@ organization: ""
 managementCluster: ""
 
 userConfig:
-  cilium:
-    configMap:
-      values: |
-        ipam:
-          mode: kubernetes
-        hubble:
-          relay:
-            enabled: true
-        defaultPolicies:
-          enabled: true
-          tolerations:
-            - effect: NoSchedule
-              operator: Exists
-            - effect: NoExecute
-              operator: Exists
-            - key: CriticalAddonsOnly
-              operator: Exists
-
   netExporter:
     configMap:
       values: |
@@ -56,31 +38,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.20.0
-  cilium:
-    appName: cilium
-    chartName: cilium
-    catalog: default
-    clusterValues:
-      configMap: true
-      secret: false
-    forceUpgrade: false
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cilium-app
-    version: 0.7.0
-  cloudProviderCloudDirector:
-    appName: cloud-provider-cloud-director
-    chartName: cloud-provider-cloud-director
-    catalog: default
-    clusterValues:
-      configMap: true
-      secret: true
-    forceUpgrade: true
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/cloud-provider-cloud-director-app
-    version: 0.2.3
+    version: 2.20.3
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
@@ -141,7 +99,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.2.0
+    version: 0.3.0
   vpa:
     appName: vertical-pod-autoscaler
     chartName: vertical-pod-autoscaler-app
@@ -153,7 +111,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 2.5.3
+    version: 3.3.0
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd
@@ -165,4 +123,4 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-crd
-    version: 1.0.1
+    version: 2.0.0

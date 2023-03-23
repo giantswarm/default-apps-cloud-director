@@ -7,13 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bump `vertical-pod-autoscaler-app` to 3.3.0
+
+## [0.4.0] - 2023-03-07
+
+### Removed
+
+- :boom: Breaking! Remove `cilium` and `cloud-provider-cloud-director` App CRs. They are now installed with `cluster-cloud-director` using `HelmRelease` CRs. Please not this is compatible only with `cluster-cloud-director` version `0.7.0` and newer.
+
 ## [0.3.9] - 2023-02-23
 
 ### Changed
 
 - Bump `observability-bundle` version to `0.2.0`.
-- Bump `cert-manager-app` version to `v2.20.0`. 
+- Bump `cert-manager-app` version to `v2.20.0`.
 - Bump `cloud-provider-cloud-director-app ` version to `0.2.3`.
+
+### Fixed
+
+- Fix templated secret name.
 
 ## [0.3.8] - 2023-02-20
 
@@ -111,7 +125,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.9...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.9...v0.4.0
 [0.3.9]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.8...v0.3.9
 [0.3.8]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.7...v0.3.8
 [0.3.7]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.6...v0.3.7
