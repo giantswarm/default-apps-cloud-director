@@ -80,7 +80,7 @@ kind: Secret
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
-  name: {{ $.Values.clusterName }}-{{ $appName }}-user-secret
+  name: {{ $.Values.clusterName }}-{{ $appName }}-user-secrets
   namespace: {{ $.Release.Namespace }}
 stringData:
   {{- (tpl (.secret | toYaml | toString) $) | nindent 2 }}

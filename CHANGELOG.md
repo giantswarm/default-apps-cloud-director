@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Corrected user secret name string.
+
 ### Changed
 
 - Bump `vertical-pod-autoscaler-app` to 3.3.0
