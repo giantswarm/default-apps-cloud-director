@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2023-03-25
+
 ### Fixed
 
 - Corrected user secret name string.
@@ -129,7 +131,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.9...v0.4.0
 [0.3.9]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.8...v0.3.9
 [0.3.8]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.3.7...v0.3.8
