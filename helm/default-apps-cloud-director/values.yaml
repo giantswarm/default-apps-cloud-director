@@ -104,6 +104,7 @@ apps:
     appName: vertical-pod-autoscaler
     chartName: vertical-pod-autoscaler-app
     catalog: default
+    dependsOn: vertical-pod-autoscaler-crd
     clusterValues:
       configMap: true
       secret: false

@@ -29,7 +29,13 @@
                             }
                         }
                     },
+                    "dependsOn": {
+                        "type": "string"
+                    },
                     "forceUpgrade": {
+                        "type": "boolean"
+                    },
+                    "inCluster": {
                         "type": "boolean"
                     },
                     "namespace": {
@@ -93,51 +99,14 @@
                             }
                         }
                     }
-                },
-                "observabilityBundle": {
-                    "type": "object",
-                    "properties": {
-                        "appName": {
-                            "type": "string"
-                        },
-                        "catalog": {
-                            "type": "string"
-                        },
-                        "chartName": {
-                            "type": "string"
-                        },
-                        "clusterValues": {
-                            "type": "object",
-                            "properties": {
-                                "configMap": {
-                                    "type": "boolean"
-                                },
-                                "secret": {
-                                    "type": "boolean"
-                                }
-                            }
-                        },
-                        "inCluster": {
-                            "type": "boolean"
-                        },
-                        "forceUpgrade": {
-                            "type": "boolean"
-                        },
-                        "namespace": {
-                            "type": "string"
-                        },
-                        "version": {
-                            "type": "string"
-                        }
-                    }
                 }
             }
         }
     },
     "required": [
+        "apps",
         "clusterName",
         "organization",
         "managementCluster"
     ]
 }
-
