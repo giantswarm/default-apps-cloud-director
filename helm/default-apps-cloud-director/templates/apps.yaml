@@ -50,6 +50,14 @@ spec:
   {{- end }}
   {{- end }}
 {{- end }}
+{{- if .extraConfigs }}
+  extraConfigs:
+  {{- range .extraConfigs }}
+  - kind: {{ .kind }}
+    name: {{ .name }}
+    namespace: {{ $.Release.Namespace }}
+  {{- end }}
+ {{- end }}
 {{- with (get $.Values.userConfig $key) }}
   userConfig:
   {{- if .configMap }}

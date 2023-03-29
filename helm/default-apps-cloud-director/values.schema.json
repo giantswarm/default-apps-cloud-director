@@ -32,6 +32,19 @@
                     "dependsOn": {
                         "type": "string"
                     },
+                    "extraConfigs": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "kind": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
                     "forceUpgrade": {
                         "type": "boolean"
                     },
