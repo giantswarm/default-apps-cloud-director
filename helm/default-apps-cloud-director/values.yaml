@@ -38,7 +38,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.20.3
+    version: 2.21.0
   kubeStateMetrics:
     appName: kube-state-metrics
     chartName: kube-state-metrics
