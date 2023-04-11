@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Bump `vertical-pod-autoscaler-app` version to `3.4.1`.
 - Bump `vertical-pod-autoscaler-crd` version to `2.0.1`.
+- Bump `cert-exporter` version to `2.4.0`.
 
 ## [0.5.0] - 2023-03-29
 
