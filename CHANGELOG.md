@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump `cert-manager-app` version to `v2.21.0`.
 - Bump `kube-state-metrics-app` version to `1.15.0`.
 - Bump `net-exporter` version to `1.14.0`.
-- Bump `metrics-server-app` version to `1.14.0`.
+- Bump `metrics-server-app` version to `2.1.0`.
 - Bump `cert-exporter` version to `2.4.0`.
 
 ## [0.5.0] - 2023-03-29
