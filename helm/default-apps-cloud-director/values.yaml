@@ -50,7 +50,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/kube-state-metrics-app
-    version: 1.14.2
+    version: 1.15.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
