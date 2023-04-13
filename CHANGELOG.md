@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump `net-exporter` version to `1.14.0`.
 - Bump `metrics-server-app` version to `2.1.0`.
 - Bump `cert-exporter` version to `2.4.0`.
+- Change default clusterIssuer from `private-giantswarm` to `letsencrypt-giantswarm`.
 
 ## [0.5.0] - 2023-03-29
 
