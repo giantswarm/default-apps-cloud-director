@@ -13,6 +13,12 @@ userConfig:
       values: |
         disableConntrackCollector: true
         disableNvmeCollector: true
+  certManager:
+    configMap:
+      values: |
+        controller:
+          defaultIssuer:
+            name: letsencrypt-giantswarm
 
 apps:
   certExporter:
