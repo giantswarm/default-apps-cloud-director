@@ -45,18 +45,6 @@ apps:
     # used by renovate
     # repo: giantswarm/cert-manager-app
     version: 2.21.0
-  kubeStateMetrics:
-    appName: kube-state-metrics
-    chartName: kube-state-metrics
-    catalog: default
-    clusterValues:
-      configMap: true
-      secret: false
-    forceUpgrade: true
-    namespace: kube-system
-    # used by renovate
-    # repo: giantswarm/kube-state-metrics-app
-    version: 1.15.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
@@ -105,7 +93,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.3.0
+    version: 0.4.0
   vpa:
     appName: vertical-pod-autoscaler
     chartName: vertical-pod-autoscaler-app
