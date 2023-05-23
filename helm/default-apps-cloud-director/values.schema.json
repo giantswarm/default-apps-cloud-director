@@ -87,19 +87,6 @@
         "userConfig": {
             "type": "object",
             "properties": {
-                "netExporter": {
-                    "type": "object",
-                    "properties": {
-                        "configMap": {
-                            "type": "object",
-                            "properties": {
-                                "values": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                },
                 "nodeExporter": {
                     "type": "object",
                     "properties": {

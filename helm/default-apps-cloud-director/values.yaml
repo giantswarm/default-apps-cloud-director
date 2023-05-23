@@ -3,11 +3,6 @@ organization: ""
 managementCluster: ""
 
 userConfig:
-  netExporter:
-    configMap:
-      values: |
-        dns:
-          service: kube-dns
   nodeExporter:
     configMap:
       values: |

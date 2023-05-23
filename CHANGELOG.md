@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix missing schema for `certManager` config.
+- Fix cluster DNS service name for `net-exporter` (`kube-dns` -> `coredns`).
 
 ## [0.5.2] - 2023-04-13
 
