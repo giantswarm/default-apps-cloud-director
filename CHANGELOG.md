@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Add support for deploying on clusters where network traffic is completely blocked by default with cilium.
+
 ## [0.5.3] - 2023-05-23
 
 ### Changed

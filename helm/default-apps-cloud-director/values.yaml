@@ -3,17 +3,38 @@ organization: ""
 managementCluster: ""
 
 userConfig:
+  certExporter:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
+  certManager:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
+  metricsServer:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
+  netExporter:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
+        dns:
+          service: kube-dns
   nodeExporter:
     configMap:
       values: |
         disableConntrackCollector: true
         disableNvmeCollector: true
-  certManager:
+  vpa:
     configMap:
       values: |
-        controller:
-          defaultIssuer:
-            name: letsencrypt-giantswarm
+        ciliumNetworkPolicy:
+          enabled: true
 
 apps:
   certExporter:
