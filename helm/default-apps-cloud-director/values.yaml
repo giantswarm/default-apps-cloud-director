@@ -48,7 +48,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-exporter
-    version: 2.5.1
+    version: 2.6.0
   certManager:
     appName: cert-manager
     chartName: cert-manager-app
@@ -60,7 +60,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.21.0
+    version: 2.22.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
@@ -84,7 +84,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/net-exporter
-    version: 1.15.0
+    version: 1.16.1
   nodeExporter:
     appName: node-exporter
     chartName: node-exporter-app
@@ -96,7 +96,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.16.0
+    version: 1.16.1
   observabilityBundle:
     appName: observability-bundle
     chartName: observability-bundle
