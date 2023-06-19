@@ -112,5 +112,11 @@
                 }
             }
         }
-    }
+    },
+    "required": [
+        "apps",
+        "clusterName",
+        "organization",
+        "managementCluster"
+    ]
 }
