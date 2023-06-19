@@ -1,76 +1,101 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "app": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "appName": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "catalog": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "chartName": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "clusterValues": {
+                    "type": "object",
+                    "properties": {
+                        "configMap": {
+                            "type": "boolean"
+                        },
+                        "secret": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "extraConfigs": {
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "kind": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "forceUpgrade": {
+                    "type": "boolean"
+                },
+                "inCluster": {
+                    "type": "boolean"
+                },
+                "namespace": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "version": {
+                    "minLength": 1,
+                    "type": "string"
+                }
+            }
+        },
+        "userConfig": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "configMap": {
+                    "type": "object",
+                    "properties": {
+                        "values": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "type": "object",
     "properties": {
         "apps": {
-            "additionalProperties": {
-                "type": "object",
-                "properties": {
-                    "appName": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "catalog": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "chartName": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "clusterValues": {
-                        "type": "object",
-                        "properties": {
-                            "configMap": {
-                                "type": "boolean"
-                            },
-                            "secret": {
-                                "type": "boolean"
-                            }
-                        }
-                    },
-                    "dependsOn": {
-                        "type": "string"
-                    },
-                    "extraConfigs": {
-                        "type": "array",
-                        "items": {
-                            "properties": {
-                                "kind": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    "forceUpgrade": {
-                        "type": "boolean"
-                    },
-                    "inCluster": {
-                        "type": "boolean"
-                    },
-                    "namespace": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "version": {
-                        "minLength": 1,
-                        "type": "string"
-                    }
+            "type": "object",
+            "properties": {
+                "certExporter": {
+                    "$ref": "#/$defs/app"
                 },
-                "required": [
-                    "appName",
-                    "catalog",
-                    "chartName",
-                    "clusterValues",
-                    "forceUpgrade",
-                    "namespace",
-                    "version"
-                ]
-            },
-            "type": "object"
+                "clusterResources": {
+                    "$ref": "#/$defs/app"
+                },
+                "metricsServer": {
+                    "$ref": "#/$defs/app"
+                },
+                "netExporter": {
+                    "$ref": "#/$defs/app"
+                },
+                "nodeExporter": {
+                    "$ref": "#/$defs/app"
+                },
+                "observabilityBundle": {
+                    "$ref": "#/$defs/app"
+                }
+            }
         },
         "clusterName": {
             "minLength": 1,
@@ -87,31 +112,11 @@
         "userConfig": {
             "type": "object",
             "properties": {
-                "nodeExporter": {
-                    "type": "object",
-                    "properties": {
-                        "configMap": {
-                            "type": "object",
-                            "properties": {
-                                "values": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
+                "netExporter": {
+                    "$ref": "#/$defs/userConfig"
                 },
-                "certManager": {
-                    "type": "object",
-                    "properties": {
-                        "configMap": {
-                            "type": "object",
-                            "properties": {
-                                "values": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
+                "nodeExporter": {
+                    "$ref": "#/$defs/userConfig"
                 }
             }
         }
