@@ -84,7 +84,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/net-exporter
-    version: 1.16.1
+    version: 1.16.2
   nodeExporter:
     appName: node-exporter
     chartName: node-exporter-app
@@ -122,7 +122,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 3.4.2
+    version: 3.5.1
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd
