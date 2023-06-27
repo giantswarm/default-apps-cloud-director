@@ -14,6 +14,14 @@ userConfig:
         controller:
           defaultIssuer:
             name: letsencrypt-giantswarm
+  etcdKubernetesResourceCountExporter:
+    configMap:
+      values: |
+        etcd:
+          hostPath: "/etc/kubernetes/pki/etcd/"
+          cacertpath: "/certs/ca.crt"
+          certpath: "/certs/server.crt"
+          keypath: "/certs/server.key"
 
 apps:
   certExporter:
@@ -114,3 +122,15 @@ apps:
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-crd
     version: 2.0.1
+  etcdKubernetesResourceCountExporter:
+    appName: etcd-kubernetes-resources-count-exporter
+    chartName: etcd-kubernetes-resources-count-exporter
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/etcd-kubernetes-resources-count-exporter
+    version: 1.3.0
