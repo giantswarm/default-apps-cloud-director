@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add `etcd-kubernetes-resources-count-exporter`.
 
+### Changed
+
+- Bump `observability-bundle` to `0.7.1`.
+
 ## [0.5.3] - 2023-05-23
 
 ### Changed
