@@ -110,7 +110,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/net-exporter
-    version: 1.16.2
+    version: 1.17.0
   nodeExporter:
     appName: node-exporter
     chartName: node-exporter-app
