@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add `etcd-kubernetes-resources-count-exporter`.
 
+### Changed
+
+- Bump `vertical-pod-autoscaler-app` to `3.5.3`.
+
 ## [0.5.3] - 2023-05-23
 
 ### Changed
