@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Bump `vertical-pod-autoscaler-app` to `3.5.3`.
+- Bump `observability-bundle` to `0.7.1`.
 
 ## [0.5.3] - 2023-05-23
 
