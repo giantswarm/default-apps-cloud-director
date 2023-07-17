@@ -50,7 +50,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.22.0
+    version: 2.24.1
   etcdKubernetesResourceCountExporter:
     appName: etcd-kubernetes-resources-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
@@ -86,7 +86,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/net-exporter
-    version: 1.16.2
+    version: 1.17.0
   nodeExporter:
     appName: node-exporter
     chartName: node-exporter-app
@@ -124,7 +124,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 3.5.1
+    version: 3.5.3
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd
