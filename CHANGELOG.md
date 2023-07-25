@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add support for deploying on clusters where network traffic is completely blocked by default with cilium.
 
+### Added
+
+- Add `etcd-kubernetes-resources-count-exporter`.
+
 ## [0.5.3] - 2023-05-23
 
 ### Changed
