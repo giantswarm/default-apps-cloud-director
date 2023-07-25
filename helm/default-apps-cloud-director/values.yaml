@@ -43,8 +43,6 @@ userConfig:
       values: |
         ciliumNetworkPolicy:
           enabled: true
-        dns:
-          service: kube-dns
   nodeExporter:
     configMap:
       values: |
