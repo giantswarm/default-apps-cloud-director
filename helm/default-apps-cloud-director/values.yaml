@@ -6,9 +6,15 @@ userConfig:
   certManager:
     configMap:
       values: |
+        # cert-manager-app v2.x.x
         controller:
           defaultIssuer:
             name: letsencrypt-giantswarm
+        # cert-manager-app v3.x.x
+        ingressShim:
+          defaultIssuerName: letsencrypt-giantswarm
+          defaultIssuerKind: ClusterIssuer
+          defaultIssuerGroup: cert-manager.io
   etcdKubernetesResourceCountExporter:
     configMap:
       values: |
