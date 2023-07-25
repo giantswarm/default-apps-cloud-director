@@ -3,9 +3,16 @@ organization: ""
 managementCluster: ""
 
 userConfig:
+  certExporter:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
   certManager:
     configMap:
       values: |
+        ciliumNetworkPolicy:
+          enabled: true
         # cert-manager-app v2.x.x
         controller:
           defaultIssuer:
@@ -26,11 +33,26 @@ userConfig:
           prefix: "/registry/"
         events:
           prefix: "/registry/events/"
+  metricsServer:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
+  netExporter:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
   nodeExporter:
     configMap:
       values: |
         disableConntrackCollector: true
         disableNvmeCollector: true
+  vpa:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
 
 apps:
   certExporter:

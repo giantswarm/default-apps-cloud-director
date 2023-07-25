@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Add support for deploying on clusters where network traffic is completely blocked by default with cilium.
 - Bump `vertical-pod-autoscaler-app` to `3.5.3`.
 - Bump `observability-bundle` to `0.7.1`.
 

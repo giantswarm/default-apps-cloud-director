@@ -112,10 +112,22 @@
         "userConfig": {
             "type": "object",
             "properties": {
+                "certExporter": {
+                    "$ref": "#/$defs/userConfig"
+                },
+                "certManager": {
+                    "$ref": "#/$defs/userConfig"
+                },
+                "metricsServer": {
+                    "$ref": "#/$defs/userConfig"
+                },
                 "netExporter": {
                     "$ref": "#/$defs/userConfig"
                 },
                 "nodeExporter": {
+                    "$ref": "#/$defs/userConfig"
+                },
+                "vpa": {
                     "$ref": "#/$defs/userConfig"
                 }
             }
