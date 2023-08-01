@@ -78,7 +78,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.24.1
+    version: 3.1.0
   etcdKubernetesResourceCountExporter:
     appName: etcd-kubernetes-resources-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
