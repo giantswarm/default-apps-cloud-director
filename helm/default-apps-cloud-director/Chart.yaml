@@ -8,4 +8,4 @@ name: default-apps-cloud-director
 restrictions:
   compatibleProviders:
     - cloud-director
-version: 0.5.4
+version: 0.6.0
