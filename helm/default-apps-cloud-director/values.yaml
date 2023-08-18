@@ -90,7 +90,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/etcd-kubernetes-resources-count-exporter
-    version: 1.3.0
+    version: 1.4.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
