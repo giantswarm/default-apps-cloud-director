@@ -78,7 +78,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 2.24.1
+    version: 3.2.0
   etcdKubernetesResourceCountExporter:
     appName: etcd-kubernetes-resources-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
@@ -90,7 +90,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/etcd-kubernetes-resources-count-exporter
-    version: 1.3.0
+    version: 1.4.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
@@ -126,7 +126,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.16.1
+    version: 1.17.1
   observabilityBundle:
     appName: observability-bundle
     chartName: observability-bundle
@@ -139,7 +139,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.7.2
+    version: 0.7.3
   vpa:
     appName: vertical-pod-autoscaler
     chartName: vertical-pod-autoscaler-app
@@ -152,7 +152,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 3.5.3
+    version: 3.5.4
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd
