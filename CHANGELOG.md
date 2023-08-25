@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bump `cert-manager-app` to `3.2.0`.
+
+
+### Fixed
+
+- Set `enableServiceLinks: true` for cert-manager@v3.
+
 ## [0.6.0] - 2023-08-03
 
 ### Changed
