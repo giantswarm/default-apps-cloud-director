@@ -7,12 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bump `cert-manager-app` to `3.3.0`.
+- Bump `observability-bundle` to `0.7.5`.
+- Bump `vertical-pod-autoscaler-app` to `4.0.0`.
+
 ## [0.6.1] - 2023-08-25
 
 ### Changed
 
 - Bump `cert-manager-app` to `3.2.0`.
-
 
 ### Fixed
 
