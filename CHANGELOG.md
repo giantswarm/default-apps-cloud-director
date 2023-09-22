@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `podAnnotations` for `node-exporter` app to be able to collect systemd-related metrics.
+
 ## [0.6.3] - 2023-09-20
 
 ### Changed
