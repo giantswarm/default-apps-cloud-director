@@ -89,8 +89,8 @@ apps:
     catalog: default
     enabled: true
     clusterValues:
-      configMap: true
-      secret: true
+      configMap: false
+      secret: false
     dependsOn: prometheus-operator-crd
     namespace: giantswarm
     # used by renovate
