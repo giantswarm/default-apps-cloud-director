@@ -70,7 +70,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-exporter
-    version: 2.6.0
+    version: 2.7.0
   certManager:
     appName: cert-manager
     chartName: cert-manager-app
