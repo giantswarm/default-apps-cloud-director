@@ -31,9 +31,6 @@
                 "dependsOn": {
                     "type": "string"
                 },
-                "enabled": {
-                    "type": "boolean"
-                },
                 "extraConfigs": {
                     "type": "array",
                     "items": {
