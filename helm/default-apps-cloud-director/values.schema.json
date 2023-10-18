@@ -100,6 +100,9 @@
                 },
                 "observabilityBundle": {
                     "$ref": "#/$defs/app"
+                },
+		"teleport-kube-agent": {
+                    "$ref": "#/$defs/app"
                 }
             }
         },
