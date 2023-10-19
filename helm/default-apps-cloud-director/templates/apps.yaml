@@ -52,9 +52,9 @@ spec:
 {{- end }}
 {{- if .extraConfigs }}
   extraConfigs:
-  {{- range .extraConfigs }}
-  - kind: {{ .kind }}
-    name: {{ .name }}
+  {{- range $extraConfig := .extraConfigs }}
+  - kind: {{ $extraConfig.kind }}
+    name: {{ tpl $extraConfig.name $ }}
     namespace: {{ $.Release.Namespace }}
   {{- end }}
  {{- end }}
