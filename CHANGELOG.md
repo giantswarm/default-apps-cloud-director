@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `chart-operator-extension` version `v1.1.1` that contains e.g. `ServiceMonitors` for `chart-operator`.
 
+### Fixed
+
+- Fix `extraConfigs` range operator
+
 ## [0.6.4] - 2023-09-22
 
 ### Added
