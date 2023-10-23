@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Bump `metrics-server-app` to `v2.4.1`.
+- Bump `etcd-kubernetes-resources-count-exporter` to `v1.7.0`.
 
 ### Added
 
