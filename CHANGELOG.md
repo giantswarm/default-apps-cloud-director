@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bump `metrics-server-app` to `v2.4.1`.
+- Bump `etcd-kubernetes-resources-count-exporter` to `v1.7.0`.
+- Bump `observability-bundle` to `v0.8.9`.
+- Bump `cert-manager-app` to `v3.5.0`.
+
 ### Added
 
 - Added `chart-operator-extension` version `v1.1.1` that contains e.g. `ServiceMonitors` for `chart-operator`.
