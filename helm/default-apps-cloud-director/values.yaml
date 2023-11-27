@@ -96,7 +96,7 @@ apps:
     # repo: giantswarm/chart-operator-extensions
     version: 1.1.1
   etcdKubernetesResourceCountExporter:
-    appName: etcd-kubernetes-resources-count-exporter
+    appName: etcd-k8s-res-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
     catalog: default
     clusterValues:
