@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.5] - 2023-12-07
+
+### Changed
+
+- Bump `metrics-server-app` to `v2.4.1`.
+- Bump `etcd-kubernetes-resources-count-exporter` to `v1.7.0`.
+- Bump `observability-bundle` to `v0.8.9`.
+- Bump `cert-manager-app` to `v3.5.0`.
+
 ### Added
 
 - Added `chart-operator-extension` version `v1.1.1` that contains e.g. `ServiceMonitors` for `chart-operator`.
@@ -14,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix `extraConfigs` range operator
+- Shortened `etcd-kubernetes-resources-count-exporter` appName to `etcd-k8s-res-count-exporter`.
 
 ### Changed
 
@@ -233,7 +243,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.5...HEAD
+[0.6.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.3...v0.6.4
 [0.6.3]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.1...v0.6.2
