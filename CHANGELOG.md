@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update `net-exporter` to `v1.18.1`.
+- Update `etcd-kubernetes-resources-count-exporter` to `v1.8.0`.
+- Update `vertical-pod-autoscaler-app` to `v4.6.0`.
+- Update `observability-bundle` to `v0.10.1`.
+- Update `node-exporter-app` to `v1.18.0`.
+- Update `cert-exporter` to `v2.8.4`.
+- Update `cert-manager-app` to `v3.6.1`.
+
 ## [0.6.5] - 2023-12-07
 
 ### Changed
