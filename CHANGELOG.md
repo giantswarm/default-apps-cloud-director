@@ -25,6 +25,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix `extraConfigs` range operator
 - Shortened `etcd-kubernetes-resources-count-exporter` appName to `etcd-k8s-res-count-exporter`.
 
+### Changed
+
+- Bump `node-exporter-app` to `1.18.0`
+
 ## [0.6.4] - 2023-09-22
 
 ### Added
