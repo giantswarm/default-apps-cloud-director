@@ -52,6 +52,11 @@ userConfig:
         # remove the pod annotation once we use flatcar images
         podAnnotations:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
+  observabilityBundle:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
   vpa:
     configMap:
       values: |
