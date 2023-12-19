@@ -147,7 +147,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.18.0
+    version: 1.18.1
   observabilityBundle:
     appName: observability-bundle
     chartName: observability-bundle
