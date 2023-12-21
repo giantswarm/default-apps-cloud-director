@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2023-12-08
+
+### Changed
+
+- Update `net-exporter` to `v1.18.1`.
+- Update `etcd-kubernetes-resources-count-exporter` to `v1.8.0`.
+- Update `vertical-pod-autoscaler-app` to `v4.6.0`.
+- Update `observability-bundle` to `v0.10.1`.
+- Update `node-exporter-app` to `v1.18.0`.
+- Update `cert-exporter` to `v2.8.4`.
+- Update `cert-manager-app` to `v3.6.1`.
+
+## [0.6.5] - 2023-12-07
+
 ### Changed
 
 - Bump `metrics-server-app` to `v2.4.1`.
@@ -21,6 +35,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix `extraConfigs` range operator
+- Shortened `etcd-kubernetes-resources-count-exporter` appName to `etcd-k8s-res-count-exporter`.
+
+### Changed
+
+- Bump `node-exporter-app` to `1.18.0`
 
 ## [0.6.4] - 2023-09-22
 
@@ -236,7 +255,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.5...v0.7.0
+[0.6.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.3...v0.6.4
 [0.6.3]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.1...v0.6.2
