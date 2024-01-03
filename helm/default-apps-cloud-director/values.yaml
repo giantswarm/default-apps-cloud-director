@@ -169,6 +169,7 @@ apps:
     # repo: giantswarm/teleport-kube-agent-app
     version: 0.6.0
     extraConfigs:
+    # created by giantswarm/teleport-operator
     - kind: configMap
       name: "{{ $.Values.clusterName }}-teleport-kube-agent-config"
   vpa:
