@@ -52,6 +52,11 @@ userConfig:
         # remove the pod annotation once we use flatcar images
         podAnnotations:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
+  observabilityBundle:
+    configMap:
+      values: |
+        ciliumNetworkPolicy:
+          enabled: true
   vpa:
     configMap:
       values: |
@@ -70,7 +75,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-exporter
-    version: 2.7.0
+    version: 2.8.4
   certManager:
     appName: cert-manager
     chartName: cert-manager-app
@@ -82,7 +87,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 3.5.0
+    version: 3.6.1
   chartOperatorExtensions:
     appName: chart-operator-extensions
     chartName: chart-operator-extensions
@@ -96,7 +101,7 @@ apps:
     # repo: giantswarm/chart-operator-extensions
     version: 1.1.1
   etcdKubernetesResourceCountExporter:
-    appName: etcd-kubernetes-resources-count-exporter
+    appName: etcd-k8s-res-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
     catalog: default
     clusterValues:
@@ -106,7 +111,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/etcd-kubernetes-resources-count-exporter
-    version: 1.7.0
+    version: 1.8.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
@@ -130,7 +135,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/net-exporter
-    version: 1.18.0
+    version: 1.18.2
   nodeExporter:
     appName: node-exporter
     chartName: node-exporter-app
@@ -142,7 +147,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.17.1
+    version: 1.18.1
   observabilityBundle:
     appName: observability-bundle
     chartName: observability-bundle
@@ -155,7 +160,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.8.9
+    version: 0.10.1
   teleportKubeAgent:
     appName: teleport-kube-agent
     chartName: teleport-kube-agent
@@ -167,7 +172,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/teleport-kube-agent-app
-    version: 0.6.0
+    version: 0.7.0
     extraConfigs:
     # created by giantswarm/teleport-operator
     - kind: configMap
@@ -184,7 +189,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 4.2.0
+    version: 4.6.0
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd
