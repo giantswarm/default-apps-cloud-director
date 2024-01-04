@@ -161,6 +161,22 @@ apps:
     # used by renovate
     # repo: giantswarm/observability-bundle
     version: 0.10.1
+  teleportKubeAgent:
+    appName: teleport-kube-agent
+    chartName: teleport-kube-agent
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: true
+    forceUpgrade: true
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/teleport-kube-agent-app
+    version: 0.7.0
+    extraConfigs:
+    # created by giantswarm/teleport-operator
+    - kind: configMap
+      name: "{{ $.Values.clusterName }}-teleport-kube-agent-config"
   vpa:
     appName: vertical-pod-autoscaler
     chartName: vertical-pod-autoscaler-app
