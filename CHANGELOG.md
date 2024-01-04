@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.7.1] - 2024-01-04
 
+### Added
+
+- Added `teleport-kube-agent` app
+
 ## [0.7.0] - 2023-12-08
 
 ### Changed
@@ -33,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `chart-operator-extension` version `v1.1.1` that contains e.g. `ServiceMonitors` for `chart-operator`.
-- Added `teleport-kube-agent` app
 
 ### Fixed
 
