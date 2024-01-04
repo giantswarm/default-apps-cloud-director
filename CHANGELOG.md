@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2024-01-04
+
+### Added
+
+- Added `teleport-kube-agent` app
+
 ## [0.7.0] - 2023-12-08
 
 ### Changed
@@ -31,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `chart-operator-extension` version `v1.1.1` that contains e.g. `ServiceMonitors` for `chart-operator`.
-- Added `teleport-kube-agent` app
 
 ### Fixed
 
@@ -256,7 +261,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.5...v0.7.0
 [0.6.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.3...v0.6.4
