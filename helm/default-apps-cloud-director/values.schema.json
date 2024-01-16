@@ -68,7 +68,7 @@
                     "type": "object",
                     "properties": {
                         "values": {
-                            "type": "string"
+                            "type": ["object", "string"]
                         }
                     }
                 }
