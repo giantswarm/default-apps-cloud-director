@@ -55,8 +55,35 @@ userConfig:
   observabilityBundle:
     configMap:
       values: |
-        ciliumNetworkPolicy:
-          enabled: true
+        userConfig:
+          kubePrometheusStack:
+            configMap:
+              values:
+                global:
+                  rbac:
+                    pspEnabled: true
+                kube-prometheus-stack:
+                  grafana:
+                    rbac:
+                      pspEnabled: true
+                  kube-state-metrics:
+                    podSecurityPolicy:
+                      enabled: true
+                  prometheus-node-exporter:
+                    rbac:
+                      pspEnabled: true
+          prometheusAgent:
+            configMap:
+              values:
+                prometheus-agent:
+                  psp:
+                    enabled: true
+          promtail:
+            configMap:
+              values:
+                promtail:
+                  rbac:
+                    pspEnabled: true
   vpa:
     configMap:
       values: |
@@ -160,7 +187,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.10.1
+    version: 1.0.0
   teleportKubeAgent:
     appName: teleport-kube-agent
     chartName: teleport-kube-agent
