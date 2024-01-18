@@ -54,7 +54,7 @@ userConfig:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
   observabilityBundle:
     configMap:
-      values: 
+      values:
         userConfig:
           kubePrometheusStack:
             configMap:
