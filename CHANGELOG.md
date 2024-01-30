@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `security-bundle` app.
+
 ### Changed
 
 - Bump observability-bundle to 1.0.0. Beware that this version contains breaking changes
