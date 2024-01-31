@@ -5,12 +5,12 @@ managementCluster: ""
 userConfig:
   certExporter:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   certManager:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
         # cert-manager-app v2.x.x
@@ -25,7 +25,7 @@ userConfig:
         enableServiceLinks: true
   etcdKubernetesResourceCountExporter:
     configMap:
-      values: |
+      values:
         etcd:
           hostPath: "/etc/kubernetes/pki/etcd/"
           cacertpath: "/certs/ca.crt"
@@ -36,17 +36,17 @@ userConfig:
           prefix: "/registry/events/"
   metricsServer:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   netExporter:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   nodeExporter:
     configMap:
-      values: |
+      values:
         disableConntrackCollector: true
         disableNvmeCollector: true
         # remove the pod annotation once we use flatcar images
@@ -54,7 +54,7 @@ userConfig:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
   observabilityBundle:
     configMap:
-      values: |
+      values:
         userConfig:
           kubePrometheusStack:
             configMap:
@@ -86,7 +86,7 @@ userConfig:
                     pspEnabled: true
   vpa:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
 
