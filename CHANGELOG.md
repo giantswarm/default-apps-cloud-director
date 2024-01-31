@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.2] - 2024-01-30
+
+### Added
+
+- Add `security-bundle` app.
+
 ### Changed
 
 - Use a YAML object for the apps configuration, so that defaults are not overwritten when users pass custom values.
@@ -266,7 +272,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.2...HEAD
+[0.7.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.5...v0.7.0
 [0.6.5]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.4...v0.6.5
