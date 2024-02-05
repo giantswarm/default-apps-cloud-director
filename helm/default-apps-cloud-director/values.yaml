@@ -114,7 +114,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 3.6.1
+    version: 3.7.2
   chartOperatorExtensions:
     appName: chart-operator-extensions
     chartName: chart-operator-extensions
