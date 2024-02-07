@@ -52,38 +52,6 @@ userConfig:
         # remove the pod annotation once we use flatcar images
         podAnnotations:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
-  observabilityBundle:
-    configMap:
-      values:
-        userConfig:
-          kubePrometheusStack:
-            configMap:
-              values:
-                global:
-                  rbac:
-                    pspEnabled: true
-                kube-prometheus-stack:
-                  grafana:
-                    rbac:
-                      pspEnabled: true
-                  kube-state-metrics:
-                    podSecurityPolicy:
-                      enabled: true
-                  prometheus-node-exporter:
-                    rbac:
-                      pspEnabled: true
-          prometheusAgent:
-            configMap:
-              values:
-                prometheus-agent:
-                  psp:
-                    enabled: true
-          promtail:
-            configMap:
-              values:
-                promtail:
-                  rbac:
-                    pspEnabled: true
   vpa:
     configMap:
       values:
@@ -187,7 +155,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 1.0.0
+    version: 1.2.1
   securityBundle:
     appName: security-bundle
     chartName: security-bundle
