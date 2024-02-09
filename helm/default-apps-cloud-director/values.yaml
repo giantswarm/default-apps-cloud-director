@@ -5,12 +5,12 @@ managementCluster: ""
 userConfig:
   certExporter:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   certManager:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
         # cert-manager-app v2.x.x
@@ -25,7 +25,7 @@ userConfig:
         enableServiceLinks: true
   etcdKubernetesResourceCountExporter:
     configMap:
-      values: |
+      values:
         etcd:
           hostPath: "/etc/kubernetes/pki/etcd/"
           cacertpath: "/certs/ca.crt"
@@ -36,30 +36,25 @@ userConfig:
           prefix: "/registry/events/"
   metricsServer:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   netExporter:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
   nodeExporter:
     configMap:
-      values: |
+      values:
         disableConntrackCollector: true
         disableNvmeCollector: true
         # remove the pod annotation once we use flatcar images
         podAnnotations:
           container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
-  observabilityBundle:
-    configMap:
-      values: |
-        ciliumNetworkPolicy:
-          enabled: true
   vpa:
     configMap:
-      values: |
+      values:
         ciliumNetworkPolicy:
           enabled: true
 
@@ -75,7 +70,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-exporter
-    version: 2.8.4
+    version: 2.9.0
   certManager:
     appName: cert-manager
     chartName: cert-manager-app
@@ -87,7 +82,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/cert-manager-app
-    version: 3.6.1
+    version: 3.7.2
   chartOperatorExtensions:
     appName: chart-operator-extensions
     chartName: chart-operator-extensions
@@ -123,7 +118,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/metrics-server-app
-    version: 2.4.1
+    version: 2.4.2
   netExporter:
     appName: net-exporter
     chartName: net-exporter
@@ -147,7 +142,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/node-exporter-app
-    version: 1.18.1
+    version: 1.19.0
   observabilityBundle:
     appName: observability-bundle
     chartName: observability-bundle
@@ -160,7 +155,20 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 0.10.1
+    version: 1.2.1
+  securityBundle:
+    appName: security-bundle
+    chartName: security-bundle
+    catalog: giantswarm
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    inCluster: true
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/security-bundle
+    version: 0.21.0
   teleportKubeAgent:
     appName: teleport-kube-agent
     chartName: teleport-kube-agent
@@ -189,7 +197,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/vertical-pod-autoscaler-app
-    version: 4.6.0
+    version: 5.0.0
   vpaCRD:
     appName: vertical-pod-autoscaler-crd
     chartName: vertical-pod-autoscaler-crd

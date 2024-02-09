@@ -3,9 +3,10 @@ annotations:
   application.giantswarm.io/app-type: "bundle"
 apiVersion: v2
 description: A Helm chart which defines the pre-installed apps in all Giant Swarm Cloud Director (VCD) clusters
+icon: https://s.giantswarm.io/app-icons/vmware-cloud-director/1/icon_dark.png
 home: https://github.com/giantswarm/default-apps-cloud-director
 name: default-apps-cloud-director
 restrictions:
   compatibleProviders:
     - cloud-director
-version: 0.7.1
+version: 0.7.2
