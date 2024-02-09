@@ -94,7 +94,7 @@ apps:
     namespace: giantswarm
     # used by renovate
     # repo: giantswarm/chart-operator-extensions
-    version: 1.1.1
+    version: 1.1.2
   etcdKubernetesResourceCountExporter:
     appName: etcd-k8s-res-count-exporter
     chartName: etcd-kubernetes-resources-count-exporter
