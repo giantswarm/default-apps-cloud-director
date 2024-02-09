@@ -118,7 +118,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/metrics-server-app
-    version: 2.4.1
+    version: 2.4.2
   netExporter:
     appName: net-exporter
     chartName: net-exporter
