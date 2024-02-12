@@ -9,4 +9,4 @@ name: default-apps-cloud-director
 restrictions:
   compatibleProviders:
     - cloud-director
-version: 0.7.2
+version: 0.7.3
