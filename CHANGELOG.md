@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.3] - 2024-02-12
+
 ### Added
 
 - Include support for schemadocs to generate Chart README file
@@ -280,7 +282,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.2...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.3...HEAD
+[0.7.3]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.6.5...v0.7.0
