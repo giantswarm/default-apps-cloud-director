@@ -1,12 +1,9 @@
 # DO NOT EDIT. Generated with:
 #
-#    devctl@6.17.1
+#    devctl@6.21.0
 #
 
 include Makefile.*.mk
-
-VALUES_SCHEMA=$(shell find ./helm -maxdepth 2 -name values.schema.json)
-CHART_README=$(shell find ./helm -maxdepth 2 -name README.md)
 
 ##@ General
 
@@ -20,11 +17,6 @@ CHART_README=$(shell find ./helm -maxdepth 2 -name README.md)
 # https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_parameters
 # More info on the awk command:
 # http://linuxcommand.org/lc3_adv_awk.php
-
-.PHONY: generate-docs
-generate-docs: ## Generate values documentation from schema
-	go install github.com/giantswarm/schemadocs@latest
-	schemadocs generate $(VALUES_SCHEMA) -o $(CHART_README)
 
 .PHONY: help
 help: ## Display this help.
