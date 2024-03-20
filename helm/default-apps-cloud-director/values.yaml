@@ -59,6 +59,18 @@ userConfig:
           enabled: true
 
 apps:
+  capi-node-labeler:
+    appName: capi-node-labeler
+    chartName: capi-node-labeler
+    catalog: default
+    clusterValues:
+      configMap: true
+      secret: false
+    forceUpgrade: false
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/capi-node-labeler-app
+    version: 0.5.0
   certExporter:
     appName: cert-exporter
     chartName: cert-exporter

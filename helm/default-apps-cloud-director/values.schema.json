@@ -80,6 +80,9 @@
         "apps": {
             "type": "object",
             "properties": {
+                "capi-node-labeler": {
+                    "$ref": "#/$defs/app"
+                },
                 "certExporter": {
                     "$ref": "#/$defs/app"
                 },
