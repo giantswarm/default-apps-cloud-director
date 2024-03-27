@@ -135,7 +135,6 @@ apps:
     appName: k8s-dns-node-cache
     chartName: k8s-dns-node-cache-app
     catalog: default
-    enabled: true
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/k8s-dns-node-cache-app
