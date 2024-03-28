@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add `cilium-servicemonitors` app.
 - Add `capi-node-labeler` app.
+- Add `k8s-dns-node-cache` app.
 
 ## [0.7.4] - 2024-02-15
 

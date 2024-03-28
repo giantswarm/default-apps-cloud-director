@@ -95,6 +95,9 @@
                 "clusterResources": {
                     "$ref": "#/$defs/app"
                 },
+                "k8sDnsNodeCache": {
+                    "$ref": "#/$defs/app"
+                },
                 "metricsServer": {
                     "$ref": "#/$defs/app"
                 },
