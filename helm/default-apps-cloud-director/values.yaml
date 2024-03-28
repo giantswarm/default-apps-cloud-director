@@ -212,7 +212,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/teleport-kube-agent-app
-    version: 0.7.1
+    version: 0.8.0
     extraConfigs:
     # created by giantswarm/teleport-operator
     - kind: configMap
