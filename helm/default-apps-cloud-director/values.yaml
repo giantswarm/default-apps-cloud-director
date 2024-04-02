@@ -130,7 +130,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/etcd-kubernetes-resources-count-exporter
-    version: 1.9.0
+    version: 1.10.0
   k8sDnsNodeCache:
     appName: k8s-dns-node-cache
     chartName: k8s-dns-node-cache-app
