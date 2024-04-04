@@ -200,7 +200,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/security-bundle
-    version: 1.6.2
+    version: 1.6.3
   teleportKubeAgent:
     appName: teleport-kube-agent
     chartName: teleport-kube-agent
