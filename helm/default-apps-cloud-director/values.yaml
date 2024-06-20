@@ -138,7 +138,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/k8s-dns-node-cache-app
-    version: 2.6.2
+    version: 2.7.0
   metricsServer:
     appName: metrics-server
     chartName: metrics-server-app
