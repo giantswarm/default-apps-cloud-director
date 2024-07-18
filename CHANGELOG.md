@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update `net-exporter` to 1.19.0.
+- Update `cert-exporter` to v2.9.1.
+- Update `cert-manager-app` to v3.8.0.
+- Update `k8s-dns-node-cache-app` to v2.8.1.
+- Update `net-exporter to v1.21.0`
+- Update `observability-bundle` to v1.4.0.
+- Update `security-bundle` to v1.7.1.
+- Update `teleport-kube-agent-app` to v0.9.2.
+- Update `vertical-pod-autoscaler-app` to v5.2.4.
 
 ## [0.8.0] - 2024-04-09
 
