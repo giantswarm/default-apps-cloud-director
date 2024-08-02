@@ -198,7 +198,7 @@ apps:
     dependsOn: kyverno-crds
     namespace: kube-system
     # used by renovate
-    # repo: giantswarm/observability-policies
+    # repo: giantswarm/observability-policies-app
     version: 0.0.1
   securityBundle:
     appName: security-bundle
