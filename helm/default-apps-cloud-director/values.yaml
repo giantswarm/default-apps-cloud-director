@@ -188,6 +188,18 @@ apps:
     # used by renovate
     # repo: giantswarm/observability-bundle
     version: 1.5.2
+  observabilityPolicies:
+    appName: observability-policies
+    chartName: observability-policies
+    catalog: default
+    clusterValues:
+      configMap: false
+      secret: false
+    dependsOn: kyverno-crds
+    namespace: kube-system
+    # used by renovate
+    # repo: giantswarm/observability-policies-app
+    version: 0.0.1
   securityBundle:
     appName: security-bundle
     chartName: security-bundle
