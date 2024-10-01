@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add `observability-policies` app.
 
+### Changed
+
+- Update `teleport-kube-agent-app` to v0.10.3.
+- Update `vertical-pod-autoscaler-app` to v5.3.0.
+- Update `vertical-pod-autoscaler-crd` to v3.1.1.
+- Udpate `observability-bundle` to v1.6.2.
+- Update `node-exporter-app` to v1.20.0.
+- Update `security-bundle` to v1.8.2.
+- Update `cert-exporter` to v2.9.2.
+
 ## [0.9.0] - 2024-07-18
 
 ### Changed
