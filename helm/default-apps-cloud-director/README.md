@@ -4,8 +4,7 @@ This page lists all available configuration options, based on the [configuration
 
 <!-- DOCS_START -->
 
-### User Config
-
+### 
 Properties within the `.userConfig` top-level object
 
 | **Property** | **Description** | **More Details** |
@@ -29,8 +28,7 @@ Properties within the `.userConfig` top-level object
 | `userConfig.vpa.configMap` |**None**|**Type:** `object`<br/>|
 | `userConfig.vpa.configMap.values` |**None**|**Types:** `object, string`<br/>|
 
-### Apps
-
+### 
 Properties within the `.apps` top-level object
 
 | **Property** | **Description** | **More Details** |
@@ -115,6 +113,22 @@ Properties within the `.apps` top-level object
 | `apps.clusterResources.inCluster` |**None**|**Type:** `boolean`<br/>|
 | `apps.clusterResources.namespace` |**None**|**Type:** `string`<br/>|
 | `apps.clusterResources.version` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache` |**None**|**Type:** `object`<br/>|
+| `apps.k8sDnsNodeCache.appName` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.catalog` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.chartName` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.clusterValues` |**None**|**Type:** `object`<br/>|
+| `apps.k8sDnsNodeCache.clusterValues.configMap` |**None**|**Type:** `boolean`<br/>|
+| `apps.k8sDnsNodeCache.clusterValues.secret` |**None**|**Type:** `boolean`<br/>|
+| `apps.k8sDnsNodeCache.dependsOn` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.extraConfigs` |**None**|**Type:** `array`<br/>|
+| `apps.k8sDnsNodeCache.extraConfigs[*]` |**None**||
+| `apps.k8sDnsNodeCache.extraConfigs[*].kind` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.extraConfigs[*].name` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.forceUpgrade` |**None**|**Type:** `boolean`<br/>|
+| `apps.k8sDnsNodeCache.inCluster` |**None**|**Type:** `boolean`<br/>|
+| `apps.k8sDnsNodeCache.namespace` |**None**|**Type:** `string`<br/>|
+| `apps.k8sDnsNodeCache.version` |**None**|**Type:** `string`<br/>|
 | `apps.metricsServer` |**None**|**Type:** `object`<br/>|
 | `apps.metricsServer.appName` |**None**|**Type:** `string`<br/>|
 | `apps.metricsServer.catalog` |**None**|**Type:** `string`<br/>|
@@ -195,6 +209,13 @@ Properties within the `.apps` top-level object
 | `apps.teleportKubeAgent.inCluster` |**None**|**Type:** `boolean`<br/>|
 | `apps.teleportKubeAgent.namespace` |**None**|**Type:** `string`<br/>|
 | `apps.teleportKubeAgent.version` |**None**|**Type:** `string`<br/>|
+
+### Delete options
+Properties within the `.deleteOptions` top-level object
+
+| **Property** | **Description** | **More Details** |
+| :----------- | :-------------- | :--------------- |
+| `deleteOptions.moveAppsHelmOwnershipToClusterCloudDirector` | **Move Apps Helm ownership to cluster-cloud-director** - Don't delete Apps' Helm charts in the workload cluster. After the update, cluster-cloud-director will recreate App CRs and new App CRs will take over the reconciliation of the existing Chart CRs in the workload cluster.|**Type:** `boolean`<br/>**Default:** `false`|
 
 ### Other
 

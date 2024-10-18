@@ -119,6 +119,18 @@
             "minLength": 1,
             "type": "string"
         },
+        "deleteOptions": {
+            "type": "object",
+            "title": "Delete options",
+            "properties": {
+                "moveAppsHelmOwnershipToClusterCloudDirector": {
+                    "type": "boolean",
+                    "title": "Move Apps Helm ownership to cluster-cloud-director",
+                    "description": "Don't delete Apps' Helm charts in the workload cluster. After the update, cluster-cloud-director will recreate App CRs and new App CRs will take over the reconciliation of the existing Chart CRs in the workload cluster.",
+                    "default": false
+                }
+            }
+        },
         "managementCluster": {
             "minLength": 1,
             "type": "string"
