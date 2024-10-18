@@ -10,6 +10,11 @@ metadata:
     # app-operator will make sure that the app on which it depends is installed before
     app-operator.giantswarm.io/depends-on: {{ printf "%s-%s" $.Values.clusterName .dependsOn -}}
     {{- end }}
+    {{- if and $.Values.deleteOptions.moveAppsHelmOwnershipToClusterCloudDirector (not .inCluster) }}
+    {{- /* We add pause annotation to all apps except bundles (.inCluster==true), because we
+           delete bundles from the MC in order to trigger correct deletion of bundled apps. */}}
+    app-operator.giantswarm.io/paused: "true"
+    {{- end }}
   labels:
     {{- include "labels.common" $ | nindent 4 }}
     {{- if .inCluster }}
