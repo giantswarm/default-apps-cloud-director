@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+> [!WARNING]
+> This release includes changes that enable the unification of cluster-cloud-director and default-apps-cloud-director. The unification
+> of cluster-cloud-director and default-apps-cloud-director does not happen automatically, it must be enabled explicitly and even then
+> it requires manual steps.
+
+**See `cluster-cloud-director` [changelog](https://github.com/giantswarm/cluster-cloud-director/blob/main/CHANGELOG.md#0620---2024-10-21) for the upgrade walkthrough.**
+
+### Added
+
+- New Helm value `.Values.deleteOptions.moveAppsHelmOwnershipToClusterCloudDirector`, which, when enabled, will pause all apps in the default-apps-cloud-director, and it will enable the below hooks. The apps are paused in order to prevent the deletion of Chart resources in the WC.
+- Helm hook to remove app-operator finalizer from App CRs, so that App CRs are deleted from the MC, while Chart CRs stay on the WC.
+- Helm hook to propagate pause annotation to all bundled apps.
+
 ## [0.10.0] - 2024-10-01
 
 ### Added
