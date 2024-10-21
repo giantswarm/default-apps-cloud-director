@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2024-10-21
+
 > [!WARNING]
 > This release includes changes that enable the unification of cluster-cloud-director and default-apps-cloud-director. The unification
 > of cluster-cloud-director and default-apps-cloud-director does not happen automatically, it must be enabled explicitly and even then
@@ -338,7 +340,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add initial default apps.
 
-[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/giantswarm/default-apps-cloud-director/compare/v0.7.4...v0.8.0
