@@ -1,0 +1,114 @@
+{{- if .Values.deleteOptions.moveAppsHelmOwnershipToClusterCloudDirector }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-delete"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-delete"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+rules:
+- apiGroups: ["application.giantswarm.io"]
+  resources: ["apps"]
+  verbs: ["get", "list", "patch", "update"]
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list", "patch", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-delete"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  namespace: "{{ $.Release.Namespace }}"
+roleRef:
+  kind: Role
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-delete"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "0"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+spec:
+  ttlSecondsAfterFinished: 2592000 # 30 days
+  template:
+    metadata:
+      name: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+      namespace: "{{ $.Release.Namespace }}"
+      labels:
+        {{- include "labels.common" $ | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      serviceAccountName: {{ $.Values.clusterName }}-move-apps-to-cluster-cloud-director
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: remove-app-operator-finalizer
+        image: gsoci.azurecr.io/giantswarm/kubectl:1.29.7
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsGroup: 65532
+          runAsUser: 65532
+        command:
+        - "/bin/sh"
+        - "-xc"
+        - |
+          NAMESPACE="{{ $.Release.Namespace }}"
+          echo "Remove app-operator finalizer for all Apps owned by default-apps-cloud-director (except bundles that we want to delete regularly)"
+          for app_name in $(kubectl get Apps -n $NAMESPACE -l giantswarm.io/cluster={{ $.Values.clusterName }},app.kubernetes.io/name=default-apps-cloud-director,giantswarm.io/managed-by={{ $.Values.clusterName }}-default-apps -o name); do
+            case "$app_name" in
+              *bundle*)
+                echo "do nothing for bundles"
+                ;;
+              *)
+                kubectl patch -n $NAMESPACE $app_name --type=merge -p '{"metadata": {"finalizers": null}}'
+                ;;
+            esac
+          done
+          echo "Remove app-operator finalizer from all observability-bundle apps"
+          for app_name in $(kubectl get Apps -n $NAMESPACE -l giantswarm.io/cluster={{ $.Values.clusterName }},giantswarm.io/managed-by={{ $.Values.clusterName }}-observability-bundle -o name); do
+            kubectl patch -n $NAMESPACE $app_name --type=merge -p '{"metadata": {"finalizers": null}}'
+          done
+          echo "Remove app-operator finalizer from all security-bundle apps"
+          for app_name in $(kubectl get Apps -n $NAMESPACE -l giantswarm.io/cluster={{ $.Values.clusterName }},giantswarm.io/managed-by={{ $.Values.clusterName }}-security-bundle -o name); do
+            kubectl patch -n $NAMESPACE $app_name --type=merge -p '{"metadata": {"finalizers": null}}'
+          done
+{{- end }}

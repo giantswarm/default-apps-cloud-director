@@ -1,0 +1,103 @@
+{{- if .Values.deleteOptions.moveAppsHelmOwnershipToClusterCloudDirector }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ $.Values.clusterName }}-propagate-pause
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ $.Values.clusterName }}-propagate-pause
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+rules:
+- apiGroups: ["application.giantswarm.io"]
+  resources: ["apps"]
+  verbs: ["get", "list", "patch", "update"]
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list", "patch", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ $.Values.clusterName }}-propagate-pause
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "-1"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ $.Values.clusterName }}-propagate-pause
+  namespace: "{{ $.Release.Namespace }}"
+roleRef:
+  kind: Role
+  name: {{ $.Values.clusterName }}-propagate-pause
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $.Values.clusterName }}-propagate-pause
+  namespace: "{{ $.Release.Namespace }}"
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
+    "helm.sh/hook-weight": "0"
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+spec:
+  ttlSecondsAfterFinished: 2592000 # 30 days
+  template:
+    metadata:
+      name: {{ $.Values.clusterName }}-propagate-pause
+      namespace: "{{ $.Release.Namespace }}"
+      labels:
+        {{- include "labels.common" $ | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      serviceAccountName: {{ $.Values.clusterName }}-propagate-pause
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: propagate-pause
+        image: gsoci.azurecr.io/giantswarm/kubectl:1.29.7
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsGroup: 65532
+          runAsUser: 65532
+        command:
+        - "/bin/sh"
+        - "-xc"
+        - |
+          NAMESPACE="{{ $.Release.Namespace }}"
+          echo "Add pause annotation to all observability-bundle apps"
+          for app_name in $(kubectl get Apps -n $NAMESPACE -l giantswarm.io/cluster={{ $.Values.clusterName }},giantswarm.io/managed-by={{ $.Values.clusterName }}-observability-bundle -o name); do
+            kubectl patch -n $NAMESPACE $app_name --type=merge -p '{"metadata": {"annotations": {"app-operator.giantswarm.io/paused": "true"}}}'
+          done
+          echo "Add pause annotation to all security-bundle apps"
+          for app_name in $(kubectl get Apps -n $NAMESPACE -l giantswarm.io/cluster={{ $.Values.clusterName }},giantswarm.io/managed-by={{ $.Values.clusterName }}-security-bundle -o name); do
+            kubectl patch -n $NAMESPACE $app_name --type=merge -p '{"metadata": {"annotations": {"app-operator.giantswarm.io/paused": "true"}}}'
+          done
+{{- end }}
