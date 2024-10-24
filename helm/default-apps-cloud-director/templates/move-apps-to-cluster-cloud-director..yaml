@@ -78,7 +78,7 @@ spec:
           type: RuntimeDefault
       containers:
       - name: remove-app-operator-finalizer
-        image: gsoci.azurecr.io/giantswarm/kubectl:1.29.7
+        image: gsoci.azurecr.io/giantswarm/kubectl:1.31.2
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
