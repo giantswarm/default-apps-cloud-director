@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "github>giantswarm/renovate-presets:default.json5"
-  ],  
-  "prBodyNotes": [
-    "Trigger E2E tests:",
-    "/run cluster-test-suites"
-  ]
-}
