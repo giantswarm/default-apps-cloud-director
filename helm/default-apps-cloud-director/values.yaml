@@ -189,7 +189,7 @@ apps:
     namespace: kube-system
     # used by renovate
     # repo: giantswarm/observability-bundle
-    version: 1.6.2
+    version: 1.8.0
   observabilityPolicies:
     appName: observability-policies
     chartName: observability-policies
